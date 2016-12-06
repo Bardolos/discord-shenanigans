@@ -2,7 +2,7 @@
 
 This page is a random assortment of japes. Instructions follow.
 
-Feel free to contact me on Discord: whisperdraw#5950.
+Feel free to contact me on Discord: _**whisperdraw#5950**_.
 
 
 #### HOW TO INSTALL BETTER DISCORD PLUGINS
