@@ -9,7 +9,15 @@ word_highlights.prototype.parse = function (list) {
 
         var m = $(this);
 
-        var m_content = $(".markup", this).text()
+        var m_content = $(".markup", this);
+        var m_sub_msg = $(".message-content", m_content);
+
+        if( m_sub_msg.length != 0 ){
+          m_content = m_sub_msg.text();
+        }
+        else{
+          m_content = m_content.text();
+        }
 
         bingo = false;
 
