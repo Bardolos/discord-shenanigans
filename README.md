@@ -18,14 +18,12 @@ This page is a random assortment of japes. Instructions follow.
 
 #### WORD HIGHLIGHTER PLUGIN
 
-you can now download my plugin
-that lets you highlight words
-like this:
+You can now download my plugin that lets you highlight words like this:
 
 ![alt text](https://cdn.discordapp.com/attachments/247117358814986241/255462783896911873/plug2.png "Sslarable, official debugger")
 
 
-###### SPECIFIC SETTINGS
+##### SPECIFIC SETTINGS
 
 On the Plugins tab of BetterDiscord settings you will see the Word Highlighter plugin. When you click settings you will see a text box.
 
