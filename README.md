@@ -2,6 +2,9 @@
 
 This page is a random assortment of japes. Instructions follow.
 
+Feel free to contact me on Discord: whisperdraw#5950.
+
+
 #### HOW TO INSTALL BETTER DISCORD PLUGINS
 
 
@@ -32,3 +35,5 @@ Type the words you want to highlight, _**one per line**_.
 And _**click Save**_.
 
 Make sure the plugin is enabled and you should be good to go.
+
+
