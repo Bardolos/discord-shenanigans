@@ -25,6 +25,10 @@ You can now download my plugin that lets you highlight words like this:
 
 ![alt text](https://cdn.discordapp.com/attachments/247117358814986241/255462783896911873/plug2.png "Sslarable, official debugger")
 
+###### Acknowledgements
+
+Sslarable - Original idea and debugging.
+Erika - Hunter of the Compact mode bug.
 
 ##### SPECIFIC SETTINGS
 
