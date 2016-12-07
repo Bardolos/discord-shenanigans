@@ -27,8 +27,8 @@ You can now download my plugin that lets you highlight words like this:
 
 ###### Acknowledgements
 
-Sslarable - Original idea and debugging.
-Erika - Hunter of the Compact mode bug.
+* **_Sslarable_** - Original idea and debugging.
+* **_Erika_** - Hunter of the Compact mode bug.
 
 ##### SPECIFIC SETTINGS
 
