@@ -29,6 +29,7 @@ You can now download my plugin that lets you highlight words like this:
 
 * **_Sslarable_** - Original idea and debugging.
 * **_Erika_** - Hunter of the Compact mode bug.
+* **_Tech_** - Idea for emote highlighting as well.
 
 ##### SPECIFIC SETTINGS
 
@@ -39,5 +40,3 @@ Type the words you want to highlight, _**one per line**_.
 And _**click Save**_.
 
 Make sure the plugin is enabled and you should be good to go.
-
-

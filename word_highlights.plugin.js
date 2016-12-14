@@ -9,26 +9,43 @@ word_highlights.prototype.parse = function (list) {
 
         var m = $(this);
 
-        var m_content = $(".markup", this);
-        var m_sub_msg = $(".message-content", m_content);
+        var markup = $(".markup", this);
+        var m_sub_msg = $(".message-content", markup);
+
+        var m_content = "";
 
         if( m_sub_msg.length != 0 ){
           m_content = m_sub_msg.text();
         }
         else{
-          m_content = m_content.text();
+          m_content = markup.text();
         }
 
+        var emoji_alts = [];
+
+        $("img", markup).each( function() {
+          emoji_alts.push( $(this).attr('alt') );
+        })
+
         bingo = false;
+        emoji_bingo = false;
 
         JSON.parse(list).every(function(word) {
           bingo = (new RegExp(word, "i")).test(m_content);
+
+          emoji_alts.forEach( function(alt) {
+            emoji_bingo = (new RegExp(word, "i")).test(alt);
+            if(emoji_bingo)
+              return false;
+            return true;
+          })
+
           if(bingo)
             return false;
           return true;
         });
 
-        if (bingo && !m.hasClass("mentioned"))
+        if ((bingo || emoji_bingo) && !m.hasClass("mentioned"))
           m.addClass("whisperlighted");
         else
           m.removeClass("whisperlighted");
