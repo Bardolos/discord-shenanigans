@@ -39,7 +39,7 @@ And _**click Save**_.
 
 Make sure the plugin is enabled and you should be good to go.
 
-#### TYPICAL SETTINGS
+###### TYPICAL SETTINGS
 
 Regular Discord emotes are size 22, and jumboable emotes are size 32. BetterDiscord emotes vary.
 
