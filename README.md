@@ -25,6 +25,10 @@ This plugin allows you to customize emote size, like so:
 
 ![alt text](https://cdn.discordapp.com/attachments/247117358814986241/259884973547323398/unknown.png "dodged a bullet there")
 
+###### Acknowledgements
+
+* **_Erika_** - Hunter of the "parse undefined" bug.
+
 ##### SPECIFIC SETTINGS
 
 On the Plugins tab of BetterDiscord settings you will see the Scaled Emotes plugin. When you click settings you will see multiple input boxes.
