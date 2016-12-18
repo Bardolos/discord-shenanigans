@@ -19,9 +19,37 @@ Feel free to contact me on Discord: _**whisperdraw#5950**_.
 9. _(Optional) Tweak the plugins' settings_
 10. Enable the desired plugins
 
+#### SCALED EMOTES PLUGIN
+
+This plugin allows you to customize emote size, like so:
+
+![alt text](https://cdn.discordapp.com/attachments/247117358814986241/259884973547323398/unknown.png "dodged a bullet there")
+
+##### SPECIFIC SETTINGS
+
+On the Plugins tab of BetterDiscord settings you will see the Scaled Emotes plugin. When you click settings you will see multiple input boxes.
+
+Type the dimension for each type of emote, up to 128:
+
+* **Regular emotes**: Standard Discord emotes as well as Twitch sync'd ones, displayed on normal messages.
+* **Jumboable emotes**: Discord and Twitch-sync'd emotes that are displayed at bigger sizes when the message consists solely of emotes.
+* **BetterDiscord emotes**: FFZ and BetterDiscord emotes - these are usually lower resolution and might not scale well.
+
+And _**click Save**_.
+
+Make sure the plugin is enabled and you should be good to go.
+
+#### TYPICAL SETTINGS
+
+Regular Discord emotes are size 22, and jumboable emotes are size 32. BetterDiscord emotes vary.
+
+I recommend the 32 - 64 - 32 setting. Regular emotes will be a bit bigger, and jumboable meotes will be doubled in size, which provides quite the improvement.
+
+Feel free to experiment with these values and report if anything breaks.
+
 #### WORD HIGHLIGHTER PLUGIN
 
-You can now download my plugin that lets you highlight words like this:
+This is a plugin that lets you highlight words like this:
 
 ![alt text](https://cdn.discordapp.com/attachments/247117358814986241/255462783896911873/plug2.png "Sslarable, official debugger")
 
