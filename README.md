@@ -19,6 +19,21 @@ Feel free to contact me on Discord: _**whisperdraw#5950**_.
 9. _(Optional) Tweak the plugins' settings_
 10. Enable the desired plugins
 
+
+#### AUDIO AND VIDEO EMBEDDER PLUGIN
+
+This plugin allows you to customize emote size, like so:
+
+![alt text](https://cdn.discordapp.com/attachments/223851348750237699/260576150340894720/unknown.png "videos not mine, song mine")
+
+###### Acknowledgements
+
+* **_Ryuunosuke_** - Plugin original idea.
+
+##### SPECIFIC SETTINGS
+
+No settings. Add the plugin and enable it - embedded audio and video files will be playable. Links to other formats like .webm will work as well.
+
 #### SCALED EMOTES PLUGIN
 
 This plugin allows you to customize emote size, like so:
