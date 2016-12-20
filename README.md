@@ -22,7 +22,7 @@ Feel free to contact me on Discord: _**whisperdraw#5950**_.
 
 #### AUDIO AND VIDEO EMBEDDER PLUGIN
 
-This plugin allows you to customize emote size, like so:
+This plugin allows you to embed local audio and video files, as well as links:
 
 ![alt text](https://cdn.discordapp.com/attachments/223851348750237699/260576150340894720/unknown.png "videos not mine, song mine")
 
