@@ -87,3 +87,20 @@ Type the words you want to highlight, _**one per line**_.
 And _**click Save**_.
 
 Make sure the plugin is enabled and you should be good to go.
+
+##### CHANGING THE HIGHLIGHT COLOR
+
+Sadly I cannot be assed to implement a color picker, so here's a CSS hack you can use to customize your highlights:
+
+```css
+.message-group .whisperlighted .message-text{
+    background:rgba(221,50,50,.2); }
+
+  .message-group .whisperlighted .message-text:after{
+    background:rgba(221,50,255,.2);
+    border-left:4px solid #dd3232;}
+
+  .theme-dark .message-group .whisperlighted .message-text{
+    background:rgba(221,50,50,.37) }
+```
+Just put it in the custom CSS page and change the values to match your prefered color. Tip: #dd3232 and rgb(221,5050) are the same. The hex value changed the border, the rest changes the highlight - be sure to leave some alpha in there.
