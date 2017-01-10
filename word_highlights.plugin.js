@@ -5,6 +5,9 @@ var word_highlights_enabled = false;
 
 
 word_highlights.prototype.parse = function (list) {
+    if( list=== null)
+      return;
+      
     $(".message").each(function() {
 
         var m = $(this);
@@ -30,7 +33,7 @@ word_highlights.prototype.parse = function (list) {
         bingo = false;
         emoji_bingo = false;
 
-        JSON.parse(list).every(function(word) {
+        list.every(function(word) {
           bingo = (new RegExp(word, "i")).test(m_content);
 
           emoji_alts.forEach( function(alt) {
@@ -55,12 +58,12 @@ word_highlights.prototype.parse = function (list) {
 
 word_highlights.prototype.onMessage = function () {
 
-  var hl = bdPluginStorage["highlight_list"];
+  var hl = bdPluginStorage.get("wWordHighlights", "highlight_list");
   this.parse(hl);
 
 };
 word_highlights.prototype.onSwitch = function () {
-  var hl = bdPluginStorage["highlight_list"];
+  var hl = bdPluginStorage.get("wWordHighlights", "highlight_list");
   this.parse(hl);
 };
 
@@ -100,7 +103,7 @@ word_highlights.prototype.ejectCSS = function () {
 };
 
 word_highlights.prototype.start = function () {
-  var hl = bdPluginStorage["highlight_list"];
+  var hl = bdPluginStorage.get("wWordHighlights", "highlight_list");
   word_highlights_enabled = true;
   this.parse(hl);
 };
@@ -127,14 +130,14 @@ word_highlights.prototype.clear_words = function () {
 
 word_highlights.prototype.getSettingsPanel = function () {
 
-    var hl = bdPluginStorage["highlight_list"];
+    var hl = bdPluginStorage.get("wWordHighlights", "highlight_list");
 
     var doc = '';
     doc += '<h2>Word highlights</h2>';
     doc += '<h3>Settings</h3>';
     doc += '<textarea id="wordList" style="width:100%; min-height:200px;">';
     if(hl != undefined) {
-        JSON.parse(hl).forEach(function(word) {
+        hl.forEach(function(word) {
             doc += word + "\n";
         });
     }
@@ -152,13 +155,13 @@ word_highlights.prototype.save = function() {
           wl.push(w);
     });
 
-    bdPluginStorage["highlight_list"] = JSON.stringify(wl);
+    bdPluginStorage.set("wWordHighlights", "highlight_list", wl);
 
 
     if(word_highlights_enabled)
     {
       this.clear_words();
-      this.parse(bdPluginStorage["highlight_list"]);
+      this.parse(bdPluginStorage.get("wWordHighlights", "highlight_list"));
     }
 };
 

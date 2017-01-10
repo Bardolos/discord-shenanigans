@@ -28,8 +28,6 @@ audio_video_embedder.prototype.parse = function () {
         if( $.inArray(filename, audio_video_embedder_enabled_video_formats) >= 0)
         {
           //videolink
-          console.log(filename)
-          console.log(acc)
           acc.append(
             '<div class="embed-wrapper"> \
               <div class="embed-color-pill"></div> \

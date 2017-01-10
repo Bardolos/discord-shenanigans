@@ -11,8 +11,8 @@ emoji_scaler.prototype.injectCSS = function () {
   var betterdiscord_size = "32";
 
   var ls = undefined;
-  if(bdPluginStorage['hd_custom_res'] != undefined)
-    ls = JSON.parse(bdPluginStorage['hd_custom_res']);
+  if(bdPluginStorage.get("wScaledEmotes", "hd_custom_res") !== undefined)
+    ls = bdPluginStorage.get("wScaledEmotes", "hd_custom_res");
 
     if( ls != undefined)
     {
@@ -20,9 +20,9 @@ emoji_scaler.prototype.injectCSS = function () {
       jumbo_size = ls.jumbo;
       betterdiscord_size = ls.betterdiscord;
 
-      if(reg_size == undefined) reg_size = "32";
-      if(jumbo_size == undefined) jumbo_size = "32";
-      if(betterdiscord_size == undefined) betterdiscord_size = "32";
+      if(reg_size === undefined) reg_size = "32";
+      if(jumbo_size === undefined) jumbo_size = "32";
+      if(betterdiscord_size === undefined) betterdiscord_size = "32";
     }
 
   $("<style type='text/css' id='whisper-emote-magic'> \
@@ -74,8 +74,8 @@ emoji_scaler.prototype.load = function () {
   //this.injectCSS();
   obj = { regular : $("#reg_size").val(), jumbo : $("#jumbo_size").val(), betterdiscord: $("#betterdiscord_size").val() };
 
-  if(bdPluginStorage['hd_custom_res'] ==undefined)
-    bdPluginStorage['hd_custom_res']= JSON.stringify(obj);
+  if(bdPluginStorage.get("wScaledEmotes", "hd_custom_res") === undefined)
+    bdPluginStorage.set("wScaledEmotes", "hd_custom_res", obj);
 };
 emoji_scaler.prototype.unload = function () {
   //this.ejectCSS();
@@ -99,8 +99,8 @@ emoji_scaler.prototype.getSettingsPanel = function () {
 
 
     var ls = undefined;
-    if(bdPluginStorage['hd_custom_res'] != undefined)
-      ls = JSON.parse(bdPluginStorage['hd_custom_res']);
+    if(bdPluginStorage.get("wScaledEmotes", "hd_custom_res") !== undefined)
+      ls = bdPluginStorage.get("wScaledEmotes", "hd_custom_res");
 
 
     if( ls != undefined)
@@ -128,7 +128,7 @@ emoji_scaler.prototype.save = function() {
 
     obj = { regular : $("#reg_size").val(), jumbo : $("#jumbo_size").val(), betterdiscord: $("#betterdiscord_size").val() };
 
-    bdPluginStorage['hd_custom_res'] = JSON.stringify(obj);
+    bdPluginStorage.set("wScaledEmotes", "hd_custom_res", obj);
 
 
     if(emoji_scaler_enabled)
