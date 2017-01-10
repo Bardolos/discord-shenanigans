@@ -55,12 +55,12 @@ word_highlights.prototype.parse = function (list) {
 
 word_highlights.prototype.onMessage = function () {
 
-  var hl = localStorage["highlight_list"];
+  var hl = bdPluginStorage["highlight_list"];
   this.parse(hl);
 
 };
 word_highlights.prototype.onSwitch = function () {
-  var hl = localStorage["highlight_list"];
+  var hl = bdPluginStorage["highlight_list"];
   this.parse(hl);
 };
 
@@ -100,7 +100,7 @@ word_highlights.prototype.ejectCSS = function () {
 };
 
 word_highlights.prototype.start = function () {
-  var hl = localStorage["highlight_list"];
+  var hl = bdPluginStorage["highlight_list"];
   word_highlights_enabled = true;
   this.parse(hl);
 };
@@ -127,7 +127,7 @@ word_highlights.prototype.clear_words = function () {
 
 word_highlights.prototype.getSettingsPanel = function () {
 
-    var hl = localStorage["highlight_list"];
+    var hl = bdPluginStorage["highlight_list"];
 
     var doc = '';
     doc += '<h2>Word highlights</h2>';
@@ -152,13 +152,13 @@ word_highlights.prototype.save = function() {
           wl.push(w);
     });
 
-    localStorage["highlight_list"] = JSON.stringify(wl);
+    bdPluginStorage["highlight_list"] = JSON.stringify(wl);
 
 
     if(word_highlights_enabled)
     {
       this.clear_words();
-      this.parse(localStorage["highlight_list"]);
+      this.parse(bdPluginStorage["highlight_list"]);
     }
 };
 

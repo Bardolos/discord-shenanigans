@@ -11,8 +11,8 @@ emoji_scaler.prototype.injectCSS = function () {
   var betterdiscord_size = "32";
 
   var ls = undefined;
-  if(localStorage['hd_custom_res'] != undefined)
-    ls = JSON.parse(localStorage['hd_custom_res']);
+  if(bdPluginStorage['hd_custom_res'] != undefined)
+    ls = JSON.parse(bdPluginStorage['hd_custom_res']);
 
     if( ls != undefined)
     {
@@ -74,8 +74,8 @@ emoji_scaler.prototype.load = function () {
   //this.injectCSS();
   obj = { regular : $("#reg_size").val(), jumbo : $("#jumbo_size").val(), betterdiscord: $("#betterdiscord_size").val() };
 
-  if(localStorage['hd_custom_res'] ==undefined)
-    localStorage['hd_custom_res']= JSON.stringify(obj);
+  if(bdPluginStorage['hd_custom_res'] ==undefined)
+    bdPluginStorage['hd_custom_res']= JSON.stringify(obj);
 };
 emoji_scaler.prototype.unload = function () {
   //this.ejectCSS();
@@ -99,8 +99,8 @@ emoji_scaler.prototype.getSettingsPanel = function () {
 
 
     var ls = undefined;
-    if(localStorage['hd_custom_res'] != undefined)
-      ls = JSON.parse(localStorage['hd_custom_res']);
+    if(bdPluginStorage['hd_custom_res'] != undefined)
+      ls = JSON.parse(bdPluginStorage['hd_custom_res']);
 
 
     if( ls != undefined)
@@ -128,7 +128,7 @@ emoji_scaler.prototype.save = function() {
 
     obj = { regular : $("#reg_size").val(), jumbo : $("#jumbo_size").val(), betterdiscord: $("#betterdiscord_size").val() };
 
-    localStorage['hd_custom_res'] = JSON.stringify(obj);
+    bdPluginStorage['hd_custom_res'] = JSON.stringify(obj);
 
 
     if(emoji_scaler_enabled)
