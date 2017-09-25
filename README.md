@@ -19,6 +19,41 @@ Feel free to contact me on Discord: _**whisperdraw#5950**_.
 9. _(Optional) Tweak the plugins' settings_
 10. Enable the desired plugins
 
+#### SHUT UP CATEGORIES
+
+This plugin allows you to mark categories as read with a click of a button, and if the category _was collapsed in the first place_ it will remain so.
+
+![succ it zak jk love u](https://cdn.discordapp.com/attachments/261708042553393152/361847009256407041/shutup.gif "stupid simple")
+
+##### SPECIFIC SETTINGS
+
+This is essentially a selfbot, which is illegal, use at your own risk.
+
+You need an authorization key for this to work. Create a file in your plugins directory named **suc_auth.config.json** and paste this inside: 
+
+```
+{
+    "auth": "your_key"
+}
+```
+
+Here are the steps to figure out whatever to put there:
+
+1. Open Discord.
+2. Press Ctrl+Shift+I to open developer tools.
+3. Click the Network tab and make sure XHR is selected. ![just read tbh](https://cdn.discordapp.com/attachments/261708042553393152/361849493731147776/unknown.png "like in greece get it cos it's where ajax lives")
+4. Right click some channel and select **Mark as Read**, this will trigger a network request named _ack_. Select this last request and under _Request Headers_ find the **authorization** field and copy the whole thing. ![just read tbh](https://cdn.discordapp.com/attachments/261708042553393152/361854811634925572/unknown.png "copy the shit in green")
+5. Paste it in the **suc_auth.config.json** file under "your_key" (be sure to keep the quoting marks. So it looks something like: 
+```
+{
+    "auth": "dlasjdnsaDAJFASfiasdn9asd987yash8hRANDOM1234897GIBBERISHddkab"
+}
+```
+
+After it just restart discord and you're good.
+
+Press the "Shut Up" button near a category to mark as read.
+
 
 #### AUDIO AND VIDEO EMBEDDER PLUGIN
 

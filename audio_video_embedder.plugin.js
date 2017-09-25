@@ -29,26 +29,26 @@ audio_video_embedder.prototype.parse = function () {
         {
           //videolink
           acc.append(
-            '<div class="embed-wrapper"> \
-              <div class="embed-color-pill"></div> \
-              <div class="embed whisper-video-magic"> \
-                <video controls preload="metadata" src=' + url +'> \
-                  <source src="' + url +'" type="video/'+filename+'">\
-                </video> \
-              </div> \
-            </div>'
+             `<div class="embed-wrapper">
+              <div class="embed-color-pill"></div>
+              <div class="embed whisper-video-magic">
+                <video controls preload="metadata" src="`+ url +`">
+                  <source src="`+ url +`" type="video/`+filename+`">
+                </video>
+              </div>
+            </div>`
           )
         }
         else if( $.inArray(filename, audio_video_embedder_enabled_audio_formats) >= 0)
         {
           //audio
           acc.append(
-            '<div class="embed-wrapper"> \
-              <div class="embed-color-pill"></div> \
-              <div class="embed whisper-audio-magic"> \
-                <audio controls preload="metadata" src='+ url +'></audio> \
-              </div> \
-            </div>'
+            `<div class="embed-wrapper">
+              <div class="embed-color-pill"></div>
+              <div class="embed whisper-audio-magic">
+                <audio controls preload="metadata" src="`+ url +`"></audio>
+              </div>
+            </div>`
           )
         }
 
@@ -60,9 +60,9 @@ audio_video_embedder.prototype.parse = function () {
 
 audio_video_embedder.prototype.injectCSS = function () {
 
-  $("<style type='text/css' id='whisper-audio-video-magic'> \
+  $(`<style type="text/css" id="whisper-audio-video-magic"> \
       .embed.whisper-video-magic video, .embed.whisper-audio-magic audio { max-width: 100%; }\
-    </style>").appendTo("head");
+    </style>`).appendTo("head");
 };
 
 audio_video_embedder.prototype.ejectCSS = function () {
@@ -75,6 +75,14 @@ audio_video_embedder.prototype.ejectCSS = function () {
 audio_video_embedder.prototype.onMessage = function () {
   this.parse();
 };
+
+audio_video_embedder.prototype.observer = function (e) {
+  // onMessage event is broken
+  if(!e.addedNodes[0] || !(e.addedNodes[0].className && e.addedNodes[0].className.toString().includes("message")))
+      return;
+  this.parse();
+};
+
 audio_video_embedder.prototype.onSwitch = function () {
   this.parse();
 };
@@ -110,7 +118,7 @@ audio_video_embedder.prototype.getDescription = function () {
     return "Embeds uploaded video and audio.";
 };
 audio_video_embedder.prototype.getVersion = function () {
-    return "1.0.5";
+    return "1.0.5.1";
 };
 audio_video_embedder.prototype.getAuthor = function () {
     return "whisperdraw";

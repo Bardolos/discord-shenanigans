@@ -5,7 +5,6 @@ var emoji_scaler_enabled = false;
 
 emoji_scaler.prototype.injectCSS = function () {
 
-
   var reg_size = "32";
   var jumbo_size = "32";
   var betterdiscord_size = "32";
@@ -25,40 +24,40 @@ emoji_scaler.prototype.injectCSS = function () {
       if(betterdiscord_size === undefined) betterdiscord_size = "32";
     }
 
-  $("<style type='text/css' id='whisper-emote-magic'> \
-  .markup .emoji{ \
- width: "+reg_size+"px; \
-    height: "+reg_size+"px; \
-} \
-\
-.markup .emoji.jumboable{ \
- width: "+jumbo_size+"px; \
-    height: "+jumbo_size+"px; \
-} \
- \
-.message-group.compact .markup .emoji { \
-  \
- width: "+reg_size+"px; \
-    height: "+reg_size+"px; \
-}    \
- \
-.message-group.compact .markup .emoji.jumboable { \
-  \
- width: "+jumbo_size+"px; \
-    height: "+jumbo_size+"px; \
-}  \
- \
-.markup .emotewrapper { \
- \
-    height:"+betterdiscord_size+"px; \
-} \
- \
-.markup .emote { \
-    max-height: inherit !important; \
-     \
-    height:100% !important; \
-} \
-    </style>").appendTo("head");
+  $(`<style type='text/css' id='whisper-emote-magic'>
+  .markup .emoji{
+ width: `+reg_size+`px;
+    height: `+reg_size+`px;
+}
+
+.markup .emoji.jumboable{
+ width: `+jumbo_size+`px;
+    height: `+jumbo_size+`px;
+}
+
+.message-group.compact .markup .emoji {
+ 
+ width: `+reg_size+`px;
+    height: `+reg_size+`px;
+}   
+
+.message-group.compact .markup .emoji.jumboable {
+ 
+ width: `+jumbo_size+`px;
+    height: `+jumbo_size+`px;
+} 
+
+.markup .emotewrapper {
+
+    height:`+betterdiscord_size+`px;
+}
+
+.markup .emote {
+    max-height: inherit !important;
+    
+    height:100% !important;
+}
+    </style>`).appendTo("head");
 };
 
 emoji_scaler.prototype.ejectCSS = function () {
@@ -115,12 +114,19 @@ emoji_scaler.prototype.getSettingsPanel = function () {
     }
 
     var doc = '';
-    doc += '<h2>Emote scaler</h2>';
-    doc += '<h3>Settings</h3>';
-    doc += 'Regular emotes: <input type="number" id="reg_size" min="1" max="128" value="' + reg_size +'"><br>';
-    doc += 'Jumboable emotes: <input type="number" id="jumbo_size" min="1" max="128" value="' + jumbo_size +'"><br>';
-    doc += 'BetterDiscord emotes: <input type="number" id="betterdiscord_size" min="1" max="128" value="' + betterdiscord_size +'""><br>';
-    doc += '<button onclick="emoji_scaler.prototype.save()">Save</button>';
+    doc += '<h2 class="bda-name">Emote scaler</h2>';
+    doc += '<h3 style="padding-bottom: 10px; padding-top: 10px; color: #b0b6b9;">Settings</h3>';
+    doc += '<span style="color: #b0b6b9;">Regular emotes: </span><input type="number" id="reg_size" min="1" max="128" value="' + reg_size +'"><br>';
+    doc += '<span style="color: #b0b6b9;">Jumboable emotes: </span><input type="number" id="jumbo_size" min="1" max="128" value="' + jumbo_size +'"><br>';
+    doc += '<span style="color: #b0b6b9;">BetterDiscord emotes: </span><input type="number" id="betterdiscord_size" min="1" max="128" value="' + betterdiscord_size +'""><br>';
+    doc += '<button style="' + `
+    background: #7289da;
+    color: #FFF;
+    border-radius: 5px;
+    height: 30px;
+    display: block;
+    width: 70px;
+    margin: 5px;` + '" onclick="emoji_scaler.prototype.save()">Save</button>';
     return doc;
 };
 
@@ -144,7 +150,7 @@ emoji_scaler.prototype.getDescription = function () {
     return "Sets custom emote sizes";
 };
 emoji_scaler.prototype.getVersion = function () {
-    return "1.0.5";
+    return "1.0.5.1";
 };
 emoji_scaler.prototype.getAuthor = function () {
     return "whisperdraw";
