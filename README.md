@@ -42,8 +42,11 @@ Here are the steps to figure out whatever to put there:
 1. Open Discord.
 2. Press Ctrl+Shift+I to open developer tools.
 3. Click the Network tab and make sure XHR is selected.
+
 ![just read tbh](https://cdn.discordapp.com/attachments/261708042553393152/361849493731147776/unknown.png "like in greece get it cos it's where ajax lives")
+
 4. Right click some channel and select **Mark as Read**, this will trigger a network request named _ack_. Select this last request and under _Request Headers_ find the **authorization** field and copy the whole thing (marked in green in the picture below).
+
 ![just read tbh](https://cdn.discordapp.com/attachments/261708042553393152/361854811634925572/unknown.png "copy the shit in green")
 5. Paste it in the **suc_auth.config.json** file under "your_key" (be sure to keep the quoting marks. So it looks something like: 
 ```

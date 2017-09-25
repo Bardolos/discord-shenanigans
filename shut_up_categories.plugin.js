@@ -57,7 +57,7 @@ shut_up_categories.prototype.SHUTUP = function (event) {
                         },
                         success: function() {
                             parentReact.props.onClick();
-                            setTimeout(parentReact.props.onClick, 50);
+                            setTimeout(parentReact.props.onClick, 1);
                         }
                     })
                 }
