@@ -19,6 +19,53 @@ Feel free to contact me on Discord: _**whisperdraw#5950**_.
 9. _(Optional) Tweak the plugins' settings_
 10. Enable the desired plugins
 
+#### SPOILER TAG ENCODER/DECODER
+
+This one allows you to send encoded messages as if they were spoiler tags. Users with the plugin can decrypt them directly on discord. Users without the plugin will be redirected to a webpage that decodes the messages for them. Check out the specific settings below for disclaimer.
+
+Encoded messages look like this to users without the plugin:
+![hmmm](https://cdn.discordapp.com/attachments/261708042553393152/411895200059752448/unknown.png "just click it")
+
+If users have the plugin they can use the visibility settings like so:
+![hmmm2](https://cdn.discordapp.com/attachments/261708042553393152/411895245253640192/unknown.png "just click it")
+
+To use this plugin simply type:
+`$poiler:"thing that is spoiled" message that contains spoilers`
+
+Remember to use quotations `'` or `"` around your "thing that is spoiled" title so people know what it is.
+
+##### SPECIFIC SETTINGS
+
+This is essentially a selfbot, which is illegal, use at your own risk.
+
+You need an authorization key for this to work. Create a file in your plugins directory named **suc_auth.config.json** and paste this inside: 
+
+```
+{
+    "auth": "your_key"
+}
+```
+
+Here are the steps to figure out whatever to put there:
+
+1. Open Discord.
+2. Press Ctrl+Shift+I to open developer tools.
+3. Click the Network tab and make sure XHR is selected.
+
+![just read tbh](https://cdn.discordapp.com/attachments/261708042553393152/361849493731147776/unknown.png "like in greece get it cos it's where ajax lives")
+
+4. Right click some channel and select **Mark as Read**, this will trigger a network request named _ack_. Select this last request and under _Request Headers_ find the **authorization** field and copy the whole thing (marked in green in the picture below).
+
+![just read tbh](https://cdn.discordapp.com/attachments/261708042553393152/361854811634925572/unknown.png "copy the shit in green")
+5. Paste it in the **suc_auth.config.json** file under "your_key" (be sure to keep the quoting marks. So it looks something like: 
+```
+{
+    "auth": "dlasjdnsaDAJFASfiasdn9asd987yash8hRANDOM1234897GIBBERISHddkab"
+}
+```
+
+After it just restart discord and you're good.
+
 #### SHUT UP CATEGORIES
 
 This plugin allows you to mark categories as read with a click of a button, and if the category _was collapsed in the first place_ it will remain so.
@@ -143,4 +190,4 @@ Sadly I cannot be assed to implement a color picker, so here's a CSS hack you ca
   .theme-dark .message-group .whisperlighted .message-text{
     background:rgba(221,50,50,.37) }
 ```
-Just put it in the custom CSS page and change the values to match your prefered color. Tip: #dd3232 and rgb(221,5050) are the same. The hex value changed the border, the rest changes the highlight - be sure to leave some alpha in there.
+Just put it in the custom CSS page and change the values to match your prefered color. Tip: #dd3232 and rgb(221,50,50) are the same. The hex value changed the border, the rest changes the highlight - be sure to leave some alpha in there.
