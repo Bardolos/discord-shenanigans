@@ -22,21 +22,23 @@ shut_up_categories.prototype.getSettingsPanel = function () {
 shut_up_categories.prototype.SHUTUP = function (event) {
     event.stopPropagation();
 
-    //let sibs = 
-    let parentReact = $(event.target.parentNode)[0][Object.keys($(event.target.parentNode)[0]).filter(function (p) {
-        return p.indexOf("__reactInternalInstance") === 0;
-    })]._currentElement;
     //ack all messages
-    siblings = parentReact._owner._hostParent._hostParent._currentElement.props.children;
+    siblings = $(event.target.parentNode.parentNode.parentNode.children); //._hostParent._currentElement.props.children;
 
     suc_auth = bdPluginStorage.get("suc_auth", "auth");
 
-    siblings.forEach(function(channel) {
-        if(channel != null && channel.props.channel != null)
+    Array.from(siblings).forEach(function(channel) {
+
+        parentReact = $(channel)[0][Object.keys($(channel)[0]).filter(function (p) {
+            return p.indexOf("__reactInternalInstance") === 0;
+        })].child.memoizedProps;
+
+        if(parentReact != null && parentReact.channel != null && !$(channel).hasClass('containerDefault-1bbItS'))
         {
+            console.log(channel);
             $.ajax({
                 method: 'GET',
-                url: 'https://discordapp.com/api/v6/channels/' + channel.props.channel.id + '/messages',
+                url: 'https://discordapp.com/api/v6/channels/' + parentReact.channel.id + '/messages',
                 contentType: 'application/json',
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader ("Authorization", suc_auth);
@@ -45,19 +47,19 @@ shut_up_categories.prototype.SHUTUP = function (event) {
                     limit: 1
                 },
                 success: function(data, status, req) {
-
+                    console.log(data);
                     if( status != 'success' || !data[0])
                         return;
                     $.ajax({
                         method: 'POST',
-                        url: 'https://discordapp.com/api/v6/channels/' + channel.props.channel.id + '/messages/' + data[0].id + '/ack',
+                        url: 'https://discordapp.com/api/v6/channels/' + data[0].channel_id + '/messages/' + data[0].id + '/ack',
                         contentType: 'application/json',
                         beforeSend: function (xhr) {
                             xhr.setRequestHeader ("Authorization", suc_auth);
                         },
                         success: function() {
-                            parentReact.props.onClick();
-                            setTimeout(parentReact.props.onClick, 1);
+                            //parentReact.onClick();
+                            //setTimeout(parentReact.onClick, 1);
                         }
                     })
                 }
