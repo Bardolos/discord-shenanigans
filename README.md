@@ -21,7 +21,7 @@ Feel free to contact me on Discord: _**whisperdraw#5950**_.
 
 #### SPOILER TAG ENCODER/DECODER
 
-This one allows you to send encoded messages as if they were spoiler tags. Users with the plugin can decrypt them directly on discord. Users without the plugin will be redirected to a webpage that decodes the messages for them. Check out the specific settings below for disclaimer.
+This one allows you to send encoded messages as if they were spoiler tags. Users with the plugin can decode them directly on discord. Users without the plugin will be redirected to a webpage that decodes the messages for them. Check out the specific settings below for disclaimer.
 
 Encoded messages look like this to users without the plugin:
 ![hmmm](https://cdn.discordapp.com/attachments/261708042553393152/411895200059752448/unknown.png "just click it")
