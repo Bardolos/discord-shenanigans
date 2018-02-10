@@ -2,15 +2,41 @@
 <html>
     <head>
         <title>Your decoded message is ready.</title>
+        <link rel="stylesheet" type="text/css" href="st.css">
     </head>
-<body>
+    <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+        <a class="header-wrapper" href="https://github.com/Bardolos/discord-shenanigans">
+            <div class="page-header">
+                <h1 class="project-name">Spoiler Codec</h1>
+                <p class="project-tagline">Click to download the BetterDiscord plugin</p>
+            </div>
+        </a>
 
-    <script type="text/javascript">
-        var link = window.location.href
-        console.log(link);
-    </script>
-</body>
+        <section class="main-content">
+            <h3 id="decoder-title"></h3>
+            <code id="decoder-output"></code>
+
+            <footer class="site-footer">
+                <span class="site-footer-owner"><a href="https://github.com/Bardolos/discord-shenanigans">These BetterDiscord plugins</a> are maintained by <a href="{{ site.github.owner_url }}">Bardolos (whisperdraw)</a>.</span>
+            </footer>
+        </section>
+
+        <script type="text/javascript">
+            var link = window.location.href
+            
+            // extract enc
+            regex = /.*?\?enc=(.*)/;
+            texts = regex.exec( link );
+
+            if(!texts)
+            {
+                document.getElementById('decoder-title').innerHTML = "No message do decode"
+                document.getElementById('decoder-output').innerHTML = "Looks like someone linked you a rotten link. Or you stumbled upon this page uninvited. Click the banner for details.";
+            } else {
+                document.getElementById('decoder-title').innerHTML = "Your decoded message:"
+                document.getElementById('decoder-output').innerHTML = atob(texts[1]);
+            }
+        </script>
+    </body>
 </html>
